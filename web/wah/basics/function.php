@@ -1,6 +1,6 @@
 <?php
 
-// function
+// functions
 
 //* start by word function
 //? we need call function to work
