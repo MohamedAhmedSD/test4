@@ -1,0 +1,10 @@
+2023-05-19T19:21:13.108893+00:00 app[web.1]: PHP memory_limit is 128M Bytes
+2023-05-19T19:21:13.115659+00:00 app[web.1]: Starting php-fpm with 4 workers...
+2023-05-19T19:21:13.166081+00:00 app[web.1]: Starting httpd...
+2023-05-19T19:21:13.263922+00:00 heroku[web.1]: State changed from starting to up
+2023-05-19T19:21:18.977639+00:00 heroku[router]: at=info method=GET path="/" host=btoo99.herokuapp.com request_id=ea9aba92-0fa4-4c0f-9d92-611a8c73e5bc fwd="197.252.211.23" dyno=web.1 connect=0ms service=0ms status=500 bytes=704 protocol=https
+2023-05-19T19:21:18.979024+00:00 app[web.1]: [Fri May 19 19:21:18.978717 2023] [core:error] [pid 167:tid 140368389568064] [client 10.1.0.37:45687] AH00124: Request exceeded the limit of 10 internal redirects due to probable configuration error. Use 'LimitInternalRecursion' to increase the limit if necessary. Use 'LogLevel debug' to get a backtrace., referer: https://dashboard.heroku.com/
+2023-05-19T19:21:18.979122+00:00 app[web.1]: 10.1.0.37 - - [19/May/2023:19:21:18 +0000] "GET / HTTP/1.1" 500 528 "https://dashboard.heroku.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36
+2023-05-19T19:32:47.642225+00:00 heroku[router]: at=info method=GET path="/" host=btoo99.herokuapp.com request_id=50d030f1-f7c9-4537-bca0-14f566240154 fwd="197.252.211.23" dyno=web.1 connect=0ms service=1ms status=500 bytes=704 protocol=https
+2023-05-19T19:32:47.643986+00:00 app[web.1]: [Fri May 19 19:32:47.643714 2023] [core:error] [pid 167:tid 140368188192320] [client 10.1.56.24:35183] AH00124: Request exceeded the limit of 10 internal redirects due to probable configuration error. Use 'LimitInternalRecursion' to increase the limit if necessary. Use 'LogLevel debug' to get a backtrace., referer: https://dashboard.heroku.com/
+2023-05-19T19:32:47.644062+00:00 app[web.1]: 10.1.56.24 - - [19/May/2023:19:32:47 +0000] "GET / HTTP/1.1" 500 528 "https://dashboard.heroku.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36
