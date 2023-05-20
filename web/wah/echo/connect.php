@@ -5,18 +5,18 @@
 //? test them by create => test.php
 
 //! [1] local database
-$dsn = "mysql:host=localhost;dbname=ecommerce_wael";
-$user = "root";
-$pass = "";
+// $dsn = "mysql:host=localhost;dbname=ecommerce_wael";
+// $user = "root";
+// $pass = "";
 
 
 //! [2] use hosting
 // $dsn = "mysql:host=localhost;dbname=epiz_34011609_ecommerce_project";
 // I am on locak so no user or pw
 // test them by create => test.php
-// $dsn = "mysql:host=sql204.epizy.com;dbname=epiz_34011609_ecommerce_project";
-// $user = "epiz_34011609";
-// $pass = "XbBALRBrQDOI";
+$dsn = "mysql:host=us-cdbr-east-06.cleardb.net;dbname=heroku_38b5e6003fb5ba7";
+$user = "b24eff3e2fed44";
+$pass = "25df3d83";
 $option = array(
    PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES UTF8"
 );

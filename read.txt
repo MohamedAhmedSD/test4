@@ -1,8 +1,64 @@
-<IfModule mod_rewrite.c>
-    RewriteEngine on
-    RewriteCond %{REQUEST_URI} !^public
-    RewriteRule ^(.*)$ public/$1 [L]
-</IfModule>
+heroku
 
-.htaccess
-d
+heroku apps
+heroku config -a btoo99
+CLEARDB_DATABASE_URL: mysql://b24eff3e2fed44:25df3d83@us-cdbr-east-06.cleardb.net/heroku_38b5e6003fb5ba7?reconnect=true
+
+I get Access Credentials
+from cleardb => system information
+Username:	b24eff3e2fed44
+Password:	25df3d83 (Reset)
+url : us-cdbr-east-06.cleardb.net
+
+examples :
+
+Here’s mine: mysql://b0cc1049d026d1:da2394e8@eu-cdbr-west-03.cleardb.net/heroku_3b61f10a737bcca?reconnect=true
+
+The URL contains the information you need to connect to your new Heroku MySQL database via PHPMyAdmin:
+
+Username: b0cc1049d026d1
+
+Password: da2394e8
+
+Host: eu-cdbr-west-03.cleardb.net
+
+
+now go into => C:\xampp\phpMyAdmin\config.inc.php
+add
+
+/* Heroku remote server */
+$i++;
+$cfg["Servers"][$i]["host"] = "us-cdbr-east-06.cleardb.net"; //provide hostname
+$cfg["Servers"][$i]["user"] = "b24eff3e2fed44"; //user name for your remote server
+$cfg["Servers"][$i]["password"] = "25df3d83"; //password
+$cfg["Servers"][$i]["auth_type"] = "config"; // keep it as config
+
+/*
+ * End of servers configuration
+ */
+
+add server into your db inside PHPMyAdmin by xammp?
+connect into internet then change => current server into my cleardb server
+
+https://www.cleardb.com/dashboard
+
+
+Connect to the Heroku database from PHP
+Copy in the code below to load in your Heroku database configuration variables to your app. 
+This will connect your app to the database.
+
+<?php
+//Get Heroku ClearDB connection information
+$cleardb_url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+$cleardb_server = $cleardb_url["host"];
+$cleardb_username = $cleardb_url["user"];
+$cleardb_password = $cleardb_url["pass"];
+$cleardb_db = substr($cleardb_url["path"],1);
+$active_group = 'default';
+$query_builder = TRUE;
+// Connect to DB
+$conn = mysqli_connect($cleardb_server, $cleardb_username, $cleardb_password, $cleardb_db);
+?>
+
+
+And that’s it! We have deployed a PHP project to Heroku, made a remote MySQL database, configured the database using PHPMyAdmin, and finally connected our app to the database.
