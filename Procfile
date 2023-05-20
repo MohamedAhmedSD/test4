@@ -1,4 +1,1 @@
-web:
-run
-this
-thing
+web: heroku-php-apache2 web/
